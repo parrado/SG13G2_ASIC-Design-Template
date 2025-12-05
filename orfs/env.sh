@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 function __setpaths() {
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    DIR="$(dirname $(perl -e 'use Cwd "abs_path";print abs_path(shift)' "${BASH_SOURCE[0]:-${(%):-%x}}"))"
-  else
-    DIR="$(dirname $(readlink -f "${BASH_SOURCE[0]:-${(%):-%x}}"))"
-  fi
+#  if [[ "$OSTYPE" == "darwin"* ]]; then
+#    DIR="$(dirname $(perl -e 'use Cwd "abs_path";print abs_path(shift)' "${BASH_SOURCE[0]:-${(%):-%x}}"))"
+#  else
+#    DIR="$(dirname $(readlink -f "${BASH_SOURCE[0]:-${(%):-%x}}"))"
+#  fi
+ DIR=/headless/Documents/mygit/SG13G2_ASIC-Design-Template/orfs/
 
   # $TOOLS = /foss/tools
-  export OPENROAD=$TOOLS/openroad-latest
+  export OPENROAD=$TOOLS/openroad
   echo "OpenROAD: ${OPENROAD}"
 
-  export OPENROAD_EXE=$TOOLS/openroad-latest/bin/openroad
+  export OPENROAD_EXE=$TOOLS/openroad/bin/openroad
   echo "OpenROAD EXE: ${OPENROAD_EXE}"
 
-  export OPENSTA_EXE=$TOOLS/openroad-latest/bin/sta
+  export OPENSTA_EXE=$TOOLS/openroad/bin/sta
   echo "OpenSTA EXE: ${OPENSTA_EXE}"
 
   export YOSYS_EXE=$TOOLS/yosys/bin/yosys

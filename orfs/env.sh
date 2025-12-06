@@ -5,8 +5,8 @@ function __setpaths() {
 #  else
 #    DIR="$(dirname $(readlink -f "${BASH_SOURCE[0]:-${(%):-%x}}"))"
 #  fi
- DIR=/headless/Documents/mygit/SG13G2_ASIC-Design-Template/orfs/
-
+ DIR=$(pwd)
+ 
   # $TOOLS = /foss/tools
   export OPENROAD=$TOOLS/openroad
   echo "OpenROAD: ${OPENROAD}"
